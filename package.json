@@ -1,0 +1,16 @@
+{
+  "name": "food-blog",
+  "version": "0.1.0",
+  "description": "Web food blog",
+  "main": "index.js",
+  "repository": "https://github.com/semnurmatov/food-blog-web.git",
+  "author": "Sem <sem.nurmatov@gmail.com>",
+  "license": "MIT",
+
+  "scripts": {
+    "start": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

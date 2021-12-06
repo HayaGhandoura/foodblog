@@ -1,0 +1,484 @@
+/*scroll top button*/
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+
+/*TEXT*/
+
+.headerbanner{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.headerbanner img{
+    width: 100%;
+    filter: brightness(50%);
+}
+
+.heading {
+    color: white;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*FAQ*/
+
+.leftside, .rightside{
+    height: 610px;
+    width: 100%;
+    background-color: #0c0c0c;
+}
+
+.leftimage{
+    display: block;
+    position: relative;
+    margin: 0px;
+    max-width: 100%;
+    top: 50px;
+    left: 120px;
+    right: 10px;
+    background-image: url("https://tinysalt.loftocean.com/wp-content/uploads/2020/03/katerina-smirnova-aSF_qBRVyg4-unsplash-1024x1024.jpg");
+    width: 530px;
+    height: 530px;
+    background-size: cover;
+   
+}
+
+@font-face {
+    font-family: Playfair Display;
+    src: url('C:\Users\ASUS\web repo\food-blog-web\fonts\PlayfairDisplay-Italic-VariableFont_wght.ttf');
+}
+.rightside h1{
+    font-family: Playfair Display,serif;
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.faq {
+
+    max-width: 550px;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    border-bottom: 1px solid #7777774d;
+    cursor: pointer;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question h3{
+    font-size: 18px;
+    color: #4fd675;
+}
+
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+
+.answer p{
+    padding-right: 10px;
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 16px;
+    color: white;
+}
+
+.faq.active .answer{
+    max-height: 300px;
+}
+
+
+.faqpage{
+    margin: 0 auto 34px;
+    background-color: #0c0c0c;
+    text-align: center;
+    padding-bottom: 35px;
+    color: white;
+}
+
+.faqpage a{
+    color: white;
+    text-decoration: none;
+    border-bottom: solid 1px #4fd675;
+    transition: 0.75s;
+}
+
+.faqpage a:hover{
+    color: #4fd675;
+}
+
+
+/*PARALLAX BAKCGROUND IMAGE SCROLL*/
+
+
+.parallax {  /*https://wallpapercave.com/wp/wp5101558.jpg*/
+    background: url("https://tinysalt.loftocean.com/wp-content/uploads/2020/03/dilyara-garifullina-GAdALRhpups-unsplash.jpg") repeat fixed 100%;
+  /*  padding: 25px;*/
+    background-size: cover; /*not to zoom in*/
+}
+
+.parallax_inner{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+.quote{
+    display: block;
+    padding: 150px 350px;
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+    line-height: 35px;
+    text-align: center;
+}
+
+
+/*TEXT THANK YOU FOR READING*/
+
+h2 {
+    text-align: center;
+    margin: 50px 0px 34px;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.35;
+
+}
+.container_text{
+
+    padding: 30px 200px 0px 200px;
+    text-align: center;
+   /* color: white;*/
+   color: black;
+/*   border-top: solid;
+   border-width: .5px; 
+   border-color: rgb(209, 208, 208);*/
+}
+.container_text p{
+
+    padding: 20px 100px;
+    text-align: justify;
+    font-size: 16px;
+    margin: 0;
+   /* color: white;*/
+   color: black;
+/*   border-bottom: solid;
+   border-width: .5px; 
+   border-color: rgb(209, 208, 208);*/
+}
+
+/**/
+/**/
+/**/
+/**/
+
+
+
+/*PHOTOS LINK TO RECIPES*/
+
+
+.image{ /*main container*/
+    align-items: center;
+    position: relative; /*lets us position the overlay absolutely 100% width and height with the background*/
+    width: 360px;
+ /*   margin-bottom: 100px;*/
+ /*   margin-bottom: 100px;
+    margin-left:  80px;*/
+   /* padding: 15px; /*to add some space between boxes*/
+    justify-content: space-evenly;
+}
+
+.image__img{
+    display: block; /*eliminates space on the bottom*/
+    width: 100%; /*actual image takes up all 360px of the parent*/
+    height: 430px;
+    filter: brightness(55%); 
+    object-fit: cover; /*to make photo fit in the box with no stretching*/
+}
+
+.image__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.6); /*for alpha*/
+    color: #fff;
+  
+    font-family: 'Quicksand', sans-serif;
+    display: flex; /*vertically and horizontally center text*/
+    flex-direction: column; /*text appears on top of each other*/
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /*initially=0 ==> it is hidden by default*/
+    transition: opacity  0.25s;
+}
+
+.image__overlay:hover{
+    opacity: 1;
+}
+
+
+/*to make the text on the image move from bottom to top on hover*/
+.image__overlay > * {  /*this indicates to all its children (title,description)*/
+    transform: translateY(50px); /*it will move them 50px from original position*/
+    /*we use a css transition to make it go up*/
+    transition: transform 0.75s; /*same time as the one aboce*/
+}
+
+.image__overlay:hover > *{
+    transform: translateY(0); /*back to its place*/
+}
+
+
+.image__title{
+    font-size: 1.3em;
+/*    font-weight: bold;*/
+  
+}
+
+/*.image__description{
+    font-size: 1.3em;
+   font-weight: bold;
+    margin-top: 0.25em; to decrease space between title and descri
+
+}*/
+
+.image__title /*.image__description*/{
+    text-decoration-line: none;
+    color: white;
+    font-weight: bold;
+}
+
+/**/
+/**/
+/**/
+/**/
+
+.image__overlay a{
+    border-bottom: solid 1px rgba(128, 128, 128, 0.486);
+    
+}
+
+.image__overlay a:hover {
+    border-color: white;
+    transition: .75s all;
+}
+
+
+
+
+/*FOOTER*/
+/*this is to take away any style that the browser sets by default*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat",sans-serif; 
+}
+
+body {
+   /* background: #333;*/
+   background: white;
+}
+
+.container{
+    background-size: cover;
+    padding: 80px 0px;
+    text-align: center;
+   /* color: white;*/
+    color: black;
+/*   border-bottom: solid;
+   border-width: .5px; 
+   border-color: rgb(209, 208, 208);*/
+    margin: auto;
+}
+
+.container p{
+    max-width: 700px;
+    margin: 40px auto;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.email-box{
+    height: 40px;
+    display: flex;
+    justify-content: center; 
+}
+
+.email-box i{
+    background: #4fd675;
+    color: white;
+    width: 40px;
+    line-height: 40px; 
+    border-radius: 20px 0 0 20px;
+}
+
+.tbox, .btn{
+    border: none;
+    outline: none;
+}
+
+.tbox{
+    width: 0px;
+    transition: 0.75s;
+}
+
+.email-box:hover > .tbox,.tbox:focus{
+    width: 260px;
+    padding: 0 10px;
+}
+
+.btn{
+    border-radius: 0 20px 20px 0;
+    background: #4fd675;
+    color: white;
+    padding: 0 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.agreetoterms{
+    margin: 0px;
+    padding: 10px;
+/*    color: white;*/
+    font-size: 15px;
+    color: black;
+}
+
+
+/*.footer{
+    width: 100%;
+    height: 130px;
+    background-color: rgb(36, 35, 35);
+}*/
+
+.inner_footer{
+    margin: 0;
+    padding: 0;
+    background-color: #111111;
+}
+
+.social_links{
+    display: flex;
+}
+
+.social_links ul{
+    padding: 15px 0px;
+    display: flex;
+ /*   align-content: center;
+    height: 3px;*/
+    margin: auto;
+}
+
+.social_items{
+    list-style: none;
+}
+
+.social_items a{
+    text-decoration: none;
+    padding: 15px;
+    font-size: 17px;
+    color: white;
+    transition: all .75s;
+}
+
+.social_items a:hover{
+    color: #4fd675;
+}
+
+.quick_links{
+    display: flex;
+ /*   width: 1300px;*/
+    height: 5px;
+    padding: 40px 0px;
+    padding-left: 145px;
+    margin: auto;
+}
+
+.quick_links ul{
+    display: flex;    
+}
+
+.quick_items{
+    list-style: none;
+}
+
+.quick_items a{
+ /*   align-items: center;*/
+    text-decoration: none;
+    padding: 0px 15px;
+    font-size: 15px;
+    color: white;
+    transition: all .75s;
+}
+
+.quick_items a:hover{
+    color: #4fd675;
+}
+/*
+.outer_footer{
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    background-color: rgb(36, 35, 35);
+}
+*/
+
+
+
+
+
+
+
+/*SCROLL TOP BUTTON*/ 
+
+.gotopbtn{
+    background: #000000;
+    color: white;
+    position: fixed;
+    width: 40px;
+    height: 40px;  
+    bottom: 38px;
+    right: 20px ;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    text-decoration: none;
+    opacity: 0;
+    line-height: 38px;
+    pointer-events: none;
+    transition: all .4s;
+}
+
+.gotopbtn.active{
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
